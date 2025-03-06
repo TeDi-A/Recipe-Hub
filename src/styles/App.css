@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+}
+
+.container {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-container {
+  /* margin-top: 30%; */
+}
+
+/* HEADER */
+.hero-img {
+  width: 100vw;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50px;
+  font-size: 1.5rem;
+  color: #edaf76;
+  right: 30px;
+}
+
+.skew-header {
+  margin: 10px 0 10px 75px;
+}
+/* SIDEBAR */
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  gap: 0.25em;
+  /* position: absolute; */
+  height: fit-content;
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+
+.filter-item {
+  background-color: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 150px;
+  height: 40px;
+  list-style: none;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.filter-item:hover {
+  cursor: pointer;
+}
+
+.filter-item-image {
+  width: 30px;
+}
+/* CONTENTS */
+
+.content {
+  display: grid;
+  gap: 1em;
+}
+
+.meal-item {
+  border: 1px solid rgba(205, 205, 205, 0.461);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.meal-item-img {
+  width: 100px;
+}
+
+/* SEARCHBAR */
+.searchbar {
+  margin: 1em 0;
+}
+
+.searchbar-design {
+  background-color: #171717;
+  border: 1px solid rgba(205, 205, 205, 0.461);
+  width: 300px;
+}
+
+/* DESKTOP */
+
+@media (width > 900px) {
+  .hero-text {
+    right: 100px;
+    font-size: 1.75rem;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 30%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .sub-container {
+    width: 80%;
+
+  }
+
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width > 900px) {
+  .hero-text {
+    right: 1px;
+  }
+
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+@media(width < 900px){
+  .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media(width < 500px){
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
