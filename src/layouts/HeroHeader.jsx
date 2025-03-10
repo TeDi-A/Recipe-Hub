@@ -6,7 +6,7 @@ const HeroHeader = () => {
   return (
     <div>
       <div className="hero-img" >
-        <img src="src/public/assets/images/pasta-image.jpg" alt="" />
+        <img src="./public/assets/images/pasta-image.jpg" alt="" />
 
         <div className="hero-text">
     
