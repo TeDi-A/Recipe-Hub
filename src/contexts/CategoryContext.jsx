@@ -9,14 +9,19 @@ export const useCategoryContext = () => {
 export const CategoryProvider = ({ children }) => {
   const [mealCategories, setmealCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedMeals, setSelectedMeals] = useState("");
+  const [selectedMeals, setSelectedMeals] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  function handleSearchChange(event) {
+    setSearchTerm(event.target.value);
+  }
 
   function displayMeals(category) {
     setSelectedCategory(category);
+    setLoading(true);
+    setSearchTerm("")
   }
-  console.log(selectedCategory);
-
-  //   console.log(selectedCategory);
 
   return (
     <CategoryContext.Provider
@@ -25,7 +30,14 @@ export const CategoryProvider = ({ children }) => {
         setmealCategories,
         selectedCategory,
         setSelectedCategory,
-        displayMeals
+        displayMeals,
+        handleSearchChange,
+        loading,
+        setLoading,
+        searchTerm, 
+        setSearchTerm,
+        selectedMeals,
+        setSelectedMeals
       }}
     >
       {children}

@@ -1,15 +1,18 @@
 import React from "react";
+import Loader from "./StyledHeader";
 
 const HeroHeader = () => {
+
   return (
     <div>
-      <div className="hero-img">
+      <div className="hero-img" >
         <img src="src/assets/images/pasta-image.jpg" alt="" />
 
         <div className="hero-text">
-          <h1>Lorem</h1>
-          <h1 className="skew-header">Ipsum</h1>
-          <h1>Dolor</h1>
+    
+          <h1>Checkout</h1>
+          <Loader />
+          <h1>Recipes</h1>
         </div>
       </div>
     </div>

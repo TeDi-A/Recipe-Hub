@@ -13,13 +13,27 @@ body {
   margin: 0 2em;
   display: flex;
   flex-direction: column;
+  gap: 5em;
 }
 
 .sub-container {
-  /* margin-top: 30%; */
+  overflow-y: auto;
+  height: 100vh;
+  width: 100%;
+}
+
+.sub-container.no-scroll {
+  overflow-y: hidden;
 }
 
 /* HEADER */
+.site-header {
+  color: #DFA206;
+  padding: 1.5em; 
+  position: absolute;
+  background-color: #171717f2;
+}
+
 .hero-img {
   width: 100vw;
   height: 60vh;
@@ -34,36 +48,52 @@ body {
 
 .hero-text {
   position: absolute;
-  top: 50px;
+  top: 5em;
   font-size: 1.5rem;
   color: #edaf76;
   right: 30px;
+  text-align: center;
 }
 
-.skew-header {
-  margin: 10px 0 10px 75px;
-}
 /* SIDEBAR */
-.sidebar {
-  display: flex;
-  flex-wrap: wrap;
+.sidebar-title {
+  color: white;
+  margin: 1em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.sidebar-filters {
+  display: grid;
+  grid-template-columns: minmax(auto, 1fr) 1fr;
   color: white;
   gap: 0.25em;
-  /* position: absolute; */
   height: fit-content;
-  margin-top: 1em;
   padding-bottom: 1em;
+  list-style: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.sidebar-filters a:link,
+.sidebar-filters a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 .filter-item {
   background-color: #171717;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  width: 150px;
+  border-radius: 40px;
   height: 40px;
   list-style: none;
   padding: 0.5em;
   display: flex;
   align-items: center;
+}
+
+.filter-item.active {
+  background-color: #e77c189b;
 }
 
 .filter-item:hover {
@@ -73,39 +103,108 @@ body {
 .filter-item-image {
   width: 30px;
 }
-/* CONTENTS */
 
+/* CONTENTS */
 .content {
   display: grid;
   gap: 1em;
+  margin-top: 10px;
 }
 
 .meal-item {
   border: 1px solid rgba(205, 205, 205, 0.461);
+  border-radius: 10px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 5px;
+}
+
+.meal-item-img-box {
+  width: 120px;
 }
 
 .meal-item-img {
-  width: 100px;
+  width: 100%;
+}
+
+.meal-item-text {
+  height: 80px;
+  align-content: center;
+  text-align: center;
+}
+
+.loading,
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  margin: calc(50vh - 300px);
+  padding: 1em;
+}
+.no-results {
+  color: white;
+  font-size: 2em;
 }
 
 /* SEARCHBAR */
+
+.searchbar-container {
+  display: flex;
+}
+
 .searchbar {
-  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  padding: 0.15em 0;
+  width: 100%;
+  background-color: #1e1e1e;
+  background-color: #171717;
+  border: 1px solid rgba(205, 205, 205, 0.461);
+  border-radius: 10px;
 }
 
 .searchbar-design {
+  background-color: transparent;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0 1em;
+}
+
+.searchbar-design:focus {
+  outline: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.enter-search {
+  margin-right: 0.75em;
+}
+
+/* FOOTER */
+.footer {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2em;
+  flex-direction: column;
   background-color: #171717;
-  border: 1px solid rgba(205, 205, 205, 0.461);
-  width: 300px;
+  margin-top: 1em;
 }
 
 /* DESKTOP */
-
 @media (width > 900px) {
   .hero-text {
     right: 100px;
@@ -118,12 +217,11 @@ body {
 
   .sidebar {
     width: 30%;
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
   }
 
   .sub-container {
     width: 80%;
-
   }
 
   .content {
@@ -133,22 +231,31 @@ body {
 
 @media (width > 900px) {
   .hero-text {
-    right: 1px;
+    right: 200px;
   }
 
   .content {
     grid-template-columns: repeat(4, 1fr);
   }
 
-}
-
-@media(width < 900px){
-  .content {
-    grid-template-columns: repeat(3, 1fr);
+  .sidebar-filters {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-@media(width < 500px){
-  .content {
+
+@media (width < 900px) {
+  .content,
+  .sidebar-filters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    gap: 0;
+  }
+}
+@media (width < 500px) {
+  .content,
+  .sidebar-filters {
     grid-template-columns: repeat(2, 1fr);
   }
 }
