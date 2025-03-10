@@ -13,7 +13,8 @@ const SiteHeader = () => {
   };
   return (
     <div className="site-header" onClick={handleHeaderClick}>
-      <h1>RecipeHub</h1>
+      <h1 className="site-header-text">RecipeHub</h1>
+      <div className="underline"></div>
     </div>
   );
 };
