@@ -42,7 +42,7 @@ const StyledWrapper = styled.div`
     color: #F6BB2E;
     animation: spin 4s infinite;
     font-size: 2em;
-    ${'' /* margin: 1px 0; */}
+    margin-top: 2px;
   }
 
   @keyframes spin {
