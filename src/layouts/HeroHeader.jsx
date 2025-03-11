@@ -8,7 +8,6 @@ const HeroHeader = () => {
     <div>
       <div className="hero-img">
         <img src= "/Images/pasta-image.jpg" alt="" />
-
         <div className="hero-text">
           <h1>Discover</h1>
           <Loader />

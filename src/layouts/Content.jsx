@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { useCategoryContext } from "../contexts/CategoryContext";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 import Loading from "../features/Loading";
 import DefaultMeals from "../features/DefaultMeals";
 import { Frown } from "lucide-react";
@@ -9,6 +9,7 @@ const Content = () => {
   const { loading, setSelectedMeals, selectedMeals, setLoading, searchTerm } =
     useCategoryContext();
   const location = useLocation();
+  const navigate = useNavigate();
   const { category } = useParams();
 
   useEffect(() => {
@@ -39,6 +40,16 @@ const Content = () => {
     }
   }, [category, location.search, setSelectedMeals]);
 
+  function handleMealSelect(meal) {
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal.strMeal}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        navigate(`/meal/${meal.idMeal}`)
+      });
+  }
+
   return (
     <div>
       {loading ? (
@@ -51,7 +62,11 @@ const Content = () => {
         <div className="content">
           {selectedMeals &&
             selectedMeals.map((meal) => (
-              <div className="meal-item" key={meal.idMeal}>
+              <div
+                className="meal-item"
+                key={meal.idMeal}
+                onClick={() => handleMealSelect(meal)}
+              >
                 <div className="meal-item-img-box">
                   <img
                     className="meal-item-img"

@@ -6,6 +6,7 @@ import SearchBar from "./components/SearchBar";
 import "./styles/App.css";
 import Footer from "./layouts/Footer";
 import SiteHeader from "./layouts/SiteHeader";
+import ViewRecipe from "./layouts/ViewRecipe";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Content />} />
             <Route path="/:category" element={<Content />} />
+            <Route path="/meal/:id" element={<ViewRecipe />} />
           </Routes>
         </div>
       </div>
