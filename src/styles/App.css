@@ -261,7 +261,7 @@ body {
 
 .back-btn {
   display: flex;
-  justify-content: center;
+ align-items: center;
   margin-top: 10px;
   background-color: #171717;
   color: white;

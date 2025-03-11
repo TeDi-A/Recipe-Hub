@@ -8,8 +8,7 @@ const ViewRecipeTemplate = ({
   mealInstructions,
   ingredientsWithMeasures,
 }) => {
-
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   function handleBackClick() {
     console.log("Clicked");
     navigate(-1);
@@ -18,7 +17,8 @@ const ViewRecipeTemplate = ({
   return (
     <div>
       <button className="back-btn" onClick={handleBackClick}>
-        <ArrowLeft /> <p className="return">Return</p>
+        <ArrowLeft />
+        <p className="return">Return</p>
       </button>
       <div className="recipe-name">
         <h1>{mealName}</h1>
