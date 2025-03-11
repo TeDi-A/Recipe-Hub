@@ -37,6 +37,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.5em;
+  
 }
 
 .site-header-text {
@@ -48,6 +49,7 @@ body {
   );
   color: transparent;
   background-clip: text;
+
 }
 
 .underline {
@@ -75,11 +77,11 @@ body {
 .hero-text {
   position: absolute;
   top: 4.5em;
+  right: 30px;
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.816);
-  margin: 1em 0;
-  font-size: 1.5em;
   font-weight: bold;
+  color: rgba(255, 255, 255, 0.816);
+  text-align: center;
 }
 
 /* SIDEBAR */
