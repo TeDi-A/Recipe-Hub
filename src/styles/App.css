@@ -76,13 +76,10 @@ body {
   position: absolute;
   top: 4.5em;
   font-size: 1.5rem;
-<<<<<<< HEAD
   color: rgba(255, 255, 255, 0.816);
-=======
-  color: white;
->>>>>>> f36bad54f392473866d1575b468bc8cd85d6497b
-  right: 30px;
-  text-align: center;
+  margin: 1em 0;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 /* SIDEBAR */
