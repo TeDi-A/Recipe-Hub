@@ -36,7 +36,7 @@ const SearchBar = () => {
         type="text"
         name=""
         id=""
-        placeholder="Search meals"
+        placeholder="Search 'salmon'"
         value={searchTerm}
         onKeyDown={handleKeyDown}
         onChange={() => handleSearchChange(event)}
